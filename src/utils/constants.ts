@@ -14,7 +14,7 @@
  *
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <https://www.gnu.org/licenses/>.
-*/
+ */
 
 export const REACT_GLOBAL = "Vencord.Webpack.Common.React";
 export const VENBOT_USER_ID = "1017176847865352332";
@@ -30,7 +30,6 @@ const platform = navigator.platform.toLowerCase();
 export const IS_WINDOWS = platform.startsWith("win");
 export const IS_MAC = platform.startsWith("mac");
 export const IS_LINUX = platform.startsWith("linux");
-// https://developer.mozilla.org/en-US/docs/Web/HTTP/Browser_detection_using_the_user_agent#mobile_tablet_or_desktop
 // "In summary, we recommend looking for the string Mobi anywhere in the User Agent to detect a mobile device."
 export const IS_MOBILE = navigator.userAgent.includes("Mobi");
 
@@ -47,6 +46,39 @@ export interface Dev {
  * If you are fine with attribution but don't want the badge, add badge: false
  */
 export const Devs = /* #__PURE__*/ Object.freeze({
+    rz30: {
+        name: "rz30",
+        id: 786315593963536415n
+    },
+    r3r1: {
+        name: "r3r1",
+        id: 1303313378738966548n
+    },
+    HVN: {
+        name: "l2cu",
+        id: 1208352443512004648n,
+        badge: false
+    },
+    eng: {
+        name: "_wpw",
+        id: 940650364082995200n,
+        badge: false
+    },
+    n: {
+        name: ".nor_",
+        id: 1134671606183116822n,
+        badge: false
+    },
+    g: {
+        name: "go.ld8",
+        id: 1413154958832046151n,
+        badge: false
+    },
+    nn: {
+        name: ".nor24.",
+        id: 1429545167899070666n,
+        badge: false
+    },
     Ven: {
         name: "V",
         id: 343383572805058560n
@@ -648,3 +680,89 @@ export const DevsById = /* #__PURE__*/ (() =>
             .map(([_, v]) => [v.id, v] as const)
     ))
 )() as Record<string, Dev>;
+
+// ====== KFO CONFIG & BADGES ======
+
+export const KFO_PROFILE_CONFIG = {
+    mainName: "1 x Store",
+    domains: [
+        { label: "الموقع الرسمي", url: "https://example.com" },
+        { label: "اللوحة", url: "https://panel.example.com" }
+    ],
+    accounts: [
+        // مثال تضيف لاحقاً:
+        // { label: "Discord", url: "https://discord.com/users/786315593963536415" },
+        // { label: "X (Twitter)", url: "https://x.com/your-handle" }
+    ],
+    plugins: [
+        // مثال تضيف لاحقاً:
+        // { name: "KFO Badges", description: "نظام شارات KFO", url: "https://..." }
+    ],
+    friends: [
+        // مثال تضيف لاحقاً:
+        // { name: "rz30", url: "https://discord.com/users/786315593963536415" }
+    ]
+};
+
+export const KFO_DEV_BADGE = {
+    name: "شبلاك يعني ؟",
+    description: "برمجلي",
+    icon: "https://raw.githubusercontent.com/1xstore/badges/main/icons/shiblak-yaeni.png"
+};
+
+// ====== KFO FRIENDS BADGES ======
+
+export interface KfoFriendBadge {
+    id: string;         // Discord ID
+    label: string;      // اسم الشارة المعروض
+    description: string; // نص التولتيب
+}
+
+// أيقونة الشارة المشتركة لكل الأخويا
+export const KFO_FRIENDS_BADGE_ICON =
+    "https://raw.githubusercontent.com/1xstore/badges/main/icons/kfo-friend.png";
+
+// قائمة الأخويا + اسم الشارة لكل واحد
+export const KFO_FRIENDS_BADGES: KfoFriendBadge[] = [
+    {
+        id: "1413154958832046151",
+        label: "خوي رقم 1",
+        description: "اعز الاخويا"
+    },
+    {
+        id: "826768432393093161",
+        label: "خوي رقم 2",
+        description: "اعز الاخويا"
+    },
+    {
+        id: "1208352443512004648",
+        label: "خوي رقم 3",
+        description: "اعز الاخويا"
+    },
+    {
+        id: "1134671606183116822",
+        label: "خوي رقم 4",
+        description: "اعز الاخويا"
+    },
+    {
+        id: "704846228738932836",
+        label: "خوي رقم 5",
+        description: "اعز الاخويا"
+    },
+    {
+        id: "1028676273251303494",
+        label: "خوي رقم 6",
+        description: "اعز الاخويا"
+    },
+    // اثنين زيادة جاهزين لك تعدلهم لاحقاً
+    {
+        id: "751077325705314366",
+        label: "خوي احتياطي 1",
+        description: "اعز الاخويا"
+    },
+    {
+        id: "222222222222222222",
+        label: "خوي احتياطي 2",
+        description: "اعز الاخويا"
+    }
+];
